@@ -6,7 +6,7 @@ PROTOCOL="http://";
 read -p "Enter the web address (without the http:// prefix, eg domain name mymoodle123.com or IP address 192.168.1.1.): " WEBSITE_ADDRESS
 
 MOODLE_PATH="/var/www/html"
-MOODLE_CODE_FOLDER="$HOME/repos/moodle"
+MOODLE_CODE_FOLDER="/home/mkadmin/repos/moodle"
 MOODLE_DATA_FOLDER="/var/moodledata/"
 sudo mkdir -p $MOODLE_PATH
 sudo mkdir -p $MOODLE_DATA_FOLDER
@@ -15,8 +15,8 @@ sudo mkdir -p $MOODLE_DATA_FOLDER
 sudo apt-get update && sudo apt upgrade -y
 
 # Get php-fpn and required php extensions using the package manager apt-get
-sudo apt-get install -y php8.4-fpm php8.4-cli php8.4-curl php8.4-zip php8.4-gd php8.4-xml php8.4-intl  php8.4-mbstring php8.4-xmlrpc php8.4-soap php8.4-bcmath php8.4-exif php8.4-ldap php8.4-mysql
-sudo systemctl start php8.4-fpm
+sudo apt-get install -y php8.5-fpm php8.5-cli php8.5-curl php8.5-zip php8.5-gd php8.5-xml php8.5-intl  php8.5-mbstring php8.5-xmlrpc php8.5-soap php8.5-bcmath php8.5-exif php8.5-ldap php8.5-mysql
+sudo systemctl start php8.5-fpm
 
 # Database and packgages required by Moodle
 sudo apt-get install -y unzip mariadb-server mariadb-client ufw nano graphviz aspell git clamav ghostscript composer
@@ -78,13 +78,13 @@ sudo systemctl reload nginx
 
 # Make necessary changes to the php configuration required by Moodle
 # Using sed finds and replaces text. This could have been done in a test editor
-sudo sed -i 's/^;max_input_vars =.*/max_input_vars = 5000/' /etc/php/8.4/fpm/php.ini
-sudo sed -i 's/^;max_input_vars =.*/max_input_vars = 5000/' /etc/php/8.4/cli/php.ini
-sudo sed -i 's/^post_max_size =.*/post_max_size = 256M/' /etc/php/8.4/fpm/php.ini
-sudo sed -i 's/^post_max_size =.*/post_max_size = 256M/' /etc/php/8.4/cli/php.ini
-sudo sed -i 's/^upload_max_filesize =.*/upload_max_filesize = 256M/' /etc/php/8.4/fpm/php.ini
-sudo sed -i 's/^upload_max_filesize =.*/upload_max_filesize = 256M/' /etc/php/8.4/cli/php.ini
-sudo systemctl reload php8.4-fpm
+sudo sed -i 's/^;max_input_vars =.*/max_input_vars = 5000/' /etc/php/8.5/fpm/php.ini
+sudo sed -i 's/^;max_input_vars =.*/max_input_vars = 5000/' /etc/php/8.5/cli/php.ini
+sudo sed -i 's/^post_max_size =.*/post_max_size = 256M/' /etc/php/8.5/fpm/php.ini
+sudo sed -i 's/^post_max_size =.*/post_max_size = 256M/' /etc/php/8.5/cli/php.ini
+sudo sed -i 's/^upload_max_filesize =.*/upload_max_filesize = 256M/' /etc/php/8.5/fpm/php.ini
+sudo sed -i 's/^upload_max_filesize =.*/upload_max_filesize = 256M/' /etc/php/8.5/cli/php.ini
+sudo systemctl reload php8.5-fpm
 
 # Clone to the Moodle code folder
 sudo git clone -b v5.1.0 https://github.com/moodle/moodle.git $MOODLE_CODE_FOLDER

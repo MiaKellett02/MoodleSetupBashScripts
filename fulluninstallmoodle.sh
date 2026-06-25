@@ -4,7 +4,7 @@ set -euo pipefail
 
 echo "🔥 FULL MOODLE + STACK UNINSTALL (idempotent)"
 sh uninstallmoodlesetup.sh
-sudo rm -rf /home/mia/repos/moodle
+sudo rm -rf /home/mkadmin/repos/moodle
 
 # -------------------------------------------------------------------
 # Paths / names used by the installer
@@ -16,7 +16,7 @@ MOODLE_REPO="$HOME/repos/moodle"
 NGINX_CONF="/etc/nginx/sites-available/moodle.conf"
 NGINX_ENABLED="/etc/nginx/sites-enabled/moodle.conf"
 
-PHP_VERSION="8.4"
+PHP_VERSION="8.5"
 
 DB_NAME="moodle"
 DB_USER="moodleuser"

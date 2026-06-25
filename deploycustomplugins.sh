@@ -3,8 +3,8 @@ set -euo pipefail
 
 #Code paths.
 MOODLE_PATH="/var/www/html"
-MOODLE_CODE_FOLDER="/home/mia/repos/moodle"
-MY_PLUGINS_PATH="/home/mia/repos/MyPlugins"
+MOODLE_CODE_FOLDER="/home/mkadmin/repos/moodle"
+MY_PLUGINS_PATH="/home/mkadmin/repos/MyPlugins"
 
 # Update plugins repo (read‑only)
 echo "Changing directory to plugins path"

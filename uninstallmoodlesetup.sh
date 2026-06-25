@@ -5,7 +5,7 @@ set -euo pipefail
 echo "⚠️ Rolling back Moodle installation (safe & idempotent)"
 
 MOODLE_PATH="/var/www/html"
-MOODLE_CODE_FOLDER="$HOME/repos/moodle"
+MOODLE_CODE_FOLDER="/home/mkadmin/repos/moodle"
 MOODLE_DATA_ROOT="/var/moodledata"
 NGINX_CONF="/etc/nginx/sites-available/moodle.conf"
 NGINX_ENABLED="/etc/nginx/sites-enabled/moodle.conf"

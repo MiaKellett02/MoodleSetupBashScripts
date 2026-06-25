@@ -2,7 +2,7 @@
 set -euo pipefail
 
 MOODLE_PATH="/var/www/html"
-MOODLE_CODE_FOLDER="$HOME/repos/moodle"
+MOODLE_CODE_FOLDER="/home/mkadmin/repos/moodle"
 
 cd "$MOODLE_CODE_FOLDER"
 
