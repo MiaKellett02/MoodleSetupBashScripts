@@ -47,6 +47,7 @@ server {
     server_name $WEBSITE_ADDRESS www.$WEBSITE_ADDRESS;
     root $MOODLE_PATH/public;
     index index.php index.html index.htm;
+    client_max_body_size 100M;
 
     location / {
         try_files \$uri \$uri/ /index.php?\$args /r.php;
