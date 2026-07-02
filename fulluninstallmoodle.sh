@@ -4,7 +4,7 @@ set -euo pipefail
 
 echo "🔥 FULL MOODLE + STACK UNINSTALL (idempotent)"
 sh uninstallmoodlesetup.sh
-sudo rm -rf /home/mkadmin/repos/moodle
+sudo rm -rf /home/mia/repos/moodle
 
 # -------------------------------------------------------------------
 # Paths / names used by the installer

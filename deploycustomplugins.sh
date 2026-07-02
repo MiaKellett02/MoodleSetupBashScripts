@@ -3,8 +3,8 @@ set -euo pipefail
 
 #Code paths.
 MOODLE_PATH="/var/www/html"
-MOODLE_CODE_FOLDER="/home/mkadmin/repos/moodle"
-MY_PLUGINS_PATH="/home/mkadmin/repos/MyPlugins"
+MOODLE_CODE_FOLDER="/home/mia/repos/moodle"
+MY_PLUGINS_PATH="/home/mia/repos/MyPlugins"
 
 # Update plugins repo (read‑only)
 echo "Changing directory to plugins path"
@@ -35,7 +35,7 @@ echo "======================================="
 sudo -u www-data php "$MOODLE_PATH/admin/cli/maintenance.php" --enable
 
 #Copy over the plugins to the moodle repo directory then sync to the web directory
-sudo rsync -a --delete $MOODLE_CODE_FOLDER/ $MOODLE_PATH/ >/dev/null
+sudo rsync -av $MOODLE_CODE_FOLDER/ $MOODLE_PATH/ >/dev/null
 sudo chown -R www-data:www-data $MOODLE_PATH
 
 #Change directory to web root then run the moodle upgrade.php script

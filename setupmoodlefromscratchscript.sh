@@ -6,7 +6,7 @@ PROTOCOL="http://";
 read -p "Enter the web address (without the http:// prefix, eg domain name mymoodle123.com or IP address 192.168.1.1.): " WEBSITE_ADDRESS
 
 MOODLE_PATH="/var/www/html"
-MOODLE_CODE_FOLDER="/home/mkadmin/repos/moodle"
+MOODLE_CODE_FOLDER="/home/mia/repos/moodle"
 MOODLE_DATA_FOLDER="/var/moodledata/"
 sudo mkdir -p $MOODLE_PATH
 sudo mkdir -p $MOODLE_DATA_FOLDER

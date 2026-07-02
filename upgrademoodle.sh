@@ -2,9 +2,11 @@
 set -euo pipefail
 
 MOODLE_PATH="/var/www/html"
-MOODLE_CODE_FOLDER="/home/mkadmin/repos/moodle"
+MOODLE_CODE_FOLDER="/home/mia/repos/moodle"
+MOODLE_VERSION_TO_UPGRADE_TO="MOODLE_501_STABLE"
 
 cd "$MOODLE_CODE_FOLDER"
+git checkout $MOODLE_VERSION_TO_UPGRADE_TO 2>/dev/null || git checkout -b $MOODLE_VERSION_TO_UPGRADE_TO origin/$MOODLE_VERSION_TO_UPGRADE_TO && git reset --hard origin/$MOODLE_VERSION_TO_UPGRADE_TO
 
 # Commit local changes if any
 if ! git diff --quiet; then
@@ -36,4 +38,6 @@ sudo -u www-data php admin/cli/upgrade.php --non-interactive
 
 # Disable maintenance
 sudo -u www-data php admin/cli/maintenance.php --disable
-sudo -u www-data php admin/cli/checks.php
+
+# Run Cron
+php admin/cli/cron.php
