@@ -1,8 +1,7 @@
 #!/bin/bash
-set -euo pipefail
 
 MOODLE_PATH="/var/www/html"
-MOODLE_CODE_FOLDER="/home/mia/repos/moodle"
+MOODLE_CODE_FOLDER="$HOME/repos/moodle"
 MOODLE_VERSION_TO_UPGRADE_TO="MOODLE_501_STABLE"
 
 cd "$MOODLE_CODE_FOLDER"

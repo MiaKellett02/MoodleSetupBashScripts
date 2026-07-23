@@ -1,9 +1,8 @@
 #!/bin/bash
-set -euo pipefail
 
 #Code paths.
 MOODLE_PATH="/var/www/html"
-MOODLE_CODE_FOLDER="/home/mia/repos/moodle"
+MOODLE_CODE_FOLDER="$HOME/repos/moodle"
 MY_PLUGINS_PATH="/home/mia/repos/MyPlugins"
 
 # Update plugins repo (read‑only)
