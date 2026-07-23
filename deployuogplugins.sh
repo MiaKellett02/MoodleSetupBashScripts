@@ -1,5 +1,4 @@
 #!/bin/bash
-set -euo pipefail
 
 #Code paths.
 MOODLE_PATH="/var/www/html"

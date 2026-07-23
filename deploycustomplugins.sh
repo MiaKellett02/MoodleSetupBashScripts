@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/bashc
 
 #Code paths.
 MOODLE_PATH="/var/www/html"
 MOODLE_CODE_FOLDER="$HOME/repos/moodle"
-MY_PLUGINS_PATH="/home/mia/repos/MyPlugins"
+MY_PLUGINS_PATH="$HOME/repos/MyPlugins"
 
 # Update plugins repo (read‑only)
 echo "Changing directory to plugins path"

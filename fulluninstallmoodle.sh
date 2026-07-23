@@ -14,7 +14,7 @@ MOODLE_REPO="$HOME/repos/moodle"
 NGINX_CONF="/etc/nginx/sites-available/moodle.conf"
 NGINX_ENABLED="/etc/nginx/sites-enabled/moodle.conf"
 
-PHP_VERSION="8.5"
+PHP_VERSION="8.4"
 
 DB_NAME="moodle"
 DB_USER="moodleuser"
