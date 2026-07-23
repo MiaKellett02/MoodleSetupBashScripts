@@ -5,6 +5,9 @@ echo "=============================="
 echo "Starting UoG plugin deployment"
 echo "=============================="
 
+cd "$HOME/repos/UoGPlugins/"
+echo "Moving to $HOME/repos/UoGPlugins"
+
 # Ensure the temp directory exists
 if [ -d "temp" ]; then
     # Do nothing
@@ -93,7 +96,7 @@ sudo -u www-data php admin/cli/upgrade.php
 sudo -u www-data php admin/cli/maintenance.php --disable
 sudo -u www-data php admin/cli/checks.php
 
-read -p 'Remove temp directory? y/n' answer
+read -p 'Remove temp directory? y/n: ' answer
 if [ "$answer" = "y" ]; then
     cd ~/repos/UoGPlugins/
     echo "Removing directory $PWD/temp...."
